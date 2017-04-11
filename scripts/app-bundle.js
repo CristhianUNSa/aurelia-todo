@@ -110,5 +110,5 @@ define('resources/index',["exports"], function (exports) {
   exports.configure = configure;
   function configure(config) {}
 });
-define('text!app.html', ['module'], function(module) { module.exports = "<template><h1>${heading}</h1></template>"; });
+define('text!app.html', ['module'], function(module) { module.exports = "<template><h1>${heading}</h1><form submit.trigger=\"addTodo()\"><input type=\"text\" value.bind=\"todoDescription\"> <button type=\"submit\">Add Todo</button></form><ul><li repeat.for=\"todo of todos\"><input type=\"checkbox\" checked.bind=\"todo.done\"> <span css=\"text-decoration: ${todo.done ? 'line-through' : 'none'}\">${todo.description}</span> <button click.trigger=\"removeTodo(todo)\">Remove</button></li></ul></template>"; });
 //# sourceMappingURL=app-bundle.js.map
